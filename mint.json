@@ -74,6 +74,7 @@
             "connectors/discourse",
             "connectors/document360",
             "connectors/dropbox",
+            "connectors/discord",
             "connectors/egnyte",
             "connectors/file",
             "connectors/fireflies",
