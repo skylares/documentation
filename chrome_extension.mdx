@@ -21,21 +21,64 @@ If you are using Onyx Cloud, you can simply install the extension from the Chrom
 
 The following directions are for users self-hosting Onyx.
 
-<Info>
-  This feature is only available in Onyx versions v0.19.0 and above.
-</Info>
+<Info>This feature is only available in Onyx versions v0.19.0 and above.</Info>
 
 1. Visit `chrome://extensions/` in your Chrome browser.
-![Chrome Extension](/images/chrome_extension/chrome_extension.png)
+   ![Chrome Extension](/images/chrome_extension/chrome_extension.png)
 2. In the upper right corner, click **Developer mode**.
 3. Click **Load unpacked**.
 4. Select the folder that is the base of the [Onyx Chrome Extension](https://github.com/onyx-dot-app/onyx-chrome-extension) repository.
-    - If you just pulled the repo, the folder you select should be `onyx-chrome-extension`.
+   - If you just pulled the repo, the folder you select should be `onyx-chrome-extension`.
 5. Click **Load**.
 6. You will now have the Onyx Chrome Extension installed.
 7. To configure settings, click the `...` and click `Options`.
-![Extension Settings](/images/chrome_extension/extension_settings.png)
+   ![Extension Settings](/images/chrome_extension/extension_settings.png)
 8. Set the `Root Domain` to your Onyx Cloud URL.
-![Root Domain](/images/chrome_extension/root_domain.png)
+   ![Root Domain](/images/chrome_extension/root_domain.png)
 
 The Onyx Chrome Extension will now be able to connect to your Onyx Cloud instance and can be used from any page in Chrome!
+
+## Chrome Extension Installation and Update Guide
+
+This guide provides instructions for installing and updating Chrome extensions in both enterprise and self-hosted settings.
+
+## Enterprise Installation
+
+Follow these steps to install and manage Chrome extensions in an enterprise environment using Google Admin.
+
+### Step 1: Access Chrome Management
+
+1. Log in to your Google Admin console.
+2. Navigate to "Devices -> Chrome -> Apps and extensions".
+
+![Devices / Chrome navigation](https://lh7-rt.googleusercontent.com/docsz/AD_4nXeQIs0ewHI4y129CyGGH1lsVSKMAI8hDX7U_vydA0ywtofwI8UA683-lS3Bkr2V1BZHQ9zMgaNs-THEVanmd0xbDx7f9IxR6drq3hCk5J2x-HpxSx-vIUiPIjUcFYPNnf2CeRO7ZA?key=CShmy-SAudRnzD_UpFRQYUHi)
+
+### Step 2: Install Extension
+
+1. Click **Add** next to the Onyx Chrome Extension.
+2. Click **Add** again to confirm the installation.
+
+### Step 3: Configure Settings
+
+1. Click **Options** to configure the extension settings.
+2. Set the `Root Domain` to your Onyx Cloud URL.
+
+### Step 4: Save Changes
+
+Don't forget to save your changes after configuring the extension.
+
+## Self-Hosted Installation
+
+### Publishing to Chrome Web Store (Optional)
+
+## Updating Extensions
+
+### Enterprise Updates
+
+### Self-Hosted Updates
+
+## Best Practices
+
+- Regularly review and audit installed extensions.
+
+For more detailed information, refer to the [official Google Chrome Enterprise documentation](https://support.google.com/chrome/a/answer/2649489?hl=en).
