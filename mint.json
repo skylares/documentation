@@ -157,6 +157,7 @@
         "guides/assistants",
         "guides/providers",
         "guides/embedding_providers"
+        "guides/agent_search"
       ]
     },
     {
