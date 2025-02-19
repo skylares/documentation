@@ -42,7 +42,6 @@ To enable Agent Search in your Onyx deployment:
 
 1. Langgraph/Langchain import issues: ensure your server is running python3.11 with libraries installed from the backend/requirements folder  
 2. Rate limit reached: Agent Search runs many queries to your LLM provider in parallel, and we have noticed that this can exceed some rate limits. We are working on tradeoffs for these cases, but for the moment the solution is to use a provider and key with higher rate limits.  
-3. Timeouts: we noticed that sometimes individual queries can take an unusually long time. In order to avoid the whole search being unduly held up, we implemented a number of timeout parameters. Should these timeouts be too aggressive for your configuration and you see frequent timeout notifications, 
-please contact us on slack or discord!
+3. Timeouts: we noticed that sometimes individual queries can take an unusually long time. In order to avoid the whole search being unduly held up, we implemented a number of timeout parameters. Should these timeouts be too aggressive for your configuration and you see frequent timeout notifications, please contact us on slack or discord\!
 4. Again, note that Agent Search produces substantially more input and output tokens than regular search\!
 
