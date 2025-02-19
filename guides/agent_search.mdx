@@ -32,7 +32,9 @@ To enable Agent Search in your Onyx deployment:
    1. Ask comparative questions, like ‘what is the difference between A and B?’. The system should generally decompose this first into separate analyses of A and B, and then compare, which should lead to better results.  
    2. Ask ambiguous questions, like ‘what were the guiding principles for Y?’. The system should be able to disambiguate what ‘guiding principles’ may relate to given your data context  
    3. Ask questions that may be simple but would benefit from a deeper analysis with richer context and detail  
-2. Click on the Analysis for sub-questions \- they may be interesting in their own rights\!  
+2. Click on the Analysis for sub-questions \- they may be interesting in their own rights\! 
+3. It is strongly recommended to configure the Fast Model in your LLM setup to actually be a faster and cheaper model. Agent Search executes substantially more queries than Basic Search, many of which can be handled well by a faster/cheaper model.
+
  
 
 
@@ -40,5 +42,7 @@ To enable Agent Search in your Onyx deployment:
 
 1. Langgraph/Langchain import issues: ensure your server is running python3.11 with libraries installed from the backend/requirements folder  
 2. Rate limit reached: Agent Search runs many queries to your LLM provider in parallel, and we have noticed that this can exceed some rate limits. We are working on tradeoffs for these cases, but for the moment the solution is to use a provider and key with higher rate limits.  
-3. Again, note that Agent Search produces substantially more input and output tokens than regular search\!
+3. Timeouts: we noticed that sometimes individual queries can take an unusually long time. In order to avoid the whole search being unduly held up, we implemented a number of timeout parameters. Should these timeouts be too aggressive for your configuration and you see frequent timeout notifications, 
+please contact us on slack or discord!
+4. Again, note that Agent Search produces substantially more input and output tokens than regular search\!
 
