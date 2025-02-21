@@ -1,0 +1,72 @@
+---
+title: Discord Bot Setup
+description: "How to set up a Discord bot to automatically answer questions"
+icon: "discord"
+---
+
+## OnyxBot Introduction
+
+Onyx will connect to your Discord and listen for questions to answer.
+
+You can easily configure rules for what channels Onyx should respond in, what knowledge sets should back each
+configured channel, and set filters to respond or not respond to different types of messages.
+
+When Onyx identifies valid questions, it will respond in the message thread with:
+
+- An LLM generated answer
+- Sources with highlighted keywords
+
+![DiscordBot](/images/discord_bot/DiscordBot.png)
+
+Onyx also provides a configuration page so you can create custom settings for each Discord channel
+(or you can just use the default settings for all your channels).
+
+![DiscordBotConfig](/images/discord_bot/DiscordBotConfig.png)
+
+Since we are using Web Sockets, Onyx is able to initiate the connection. This means that this is able
+to work even if you are running Onyx inside a firewall protected VPC.
+
+## Setting up
+
+### Authorization
+
+**Note:** You must have "Manage Server" permissions in the Discord server to set up the Discord bot.
+
+1. Navigate and sign in to [https://discord.com/developers/applications](https://discord.com/developers/applications). 
+2. Create a new Discord app:
+   - Click the **New Application** button in the top right.
+   - Give your app a name, accept the Terms of Service, and click **Create**.
+
+![DiscordCreateBot](/images/connector/discord/DiscordCreateBot.png)
+
+3. Select the "Bot" tab:
+   - Click the **Reset Token** button and copy this token, as you will need this later to connect to Onyx.
+   - On this same page, scroll down to the **Privileged Gateway Intents** section and enable all three settings; **Presence Intent**, **Server Members Intent**, and **Message Content Intent**.
+
+![DiscordGatewayIntents](/images/connector/discord/DiscordGatewayIntents.png)
+
+4. Now select the "OAuth2" tab:
+   - Under scopes in the **OAuth2 URL Generator** section, select **bot** and **applications.commands**
+   - Scroll down to **Bot Permissions** and select all of the following permissions:
+      - Under General Permissions: **View Channels**
+      - Under Text Permissions: **Send Messages**, **Create Public Threads**, **Create Private Threads**, **Send Messages In Threads**, **Manage Messages**, **Manage Threads**, **Embed Links**, **Attach Files**, **Read Message History**, **Add Reactions**, and **Use Slash Commands**
+   - Ensure the Integration Type is set to **Guild Install** and then copy the generated URL. You will use this to invite the bot to your server.
+
+![DiscordBotPermissions](/images/connector/discord/DiscordBotPermissions.png)
+
+### Setting Onyx to use it
+
+1. Start by finding the admin page in the top right of the Onyx web UI.
+![OnyxAdminButton](/images/slack_bot/OnyxAdminButton.png)
+
+2. In the sidebar of the admin page, Select the **Discord Bots** tab.
+
+3. Provide your Discord Bot Token and a name for the bot.
+![SlackBotTokens](/images/slack_bot/SlackBotTokens.png)
+
+4. Select the **Add channel configuration** button, and add any settings you want. Once you submit this, Onyx will start to respond within the set channel after a short startup delay.
+
+There are also a set of less often used / more advanced configuration options available via environment
+variables that can set things like how many "Reference Documents" to show per answer, etc.
+Refer to the available configs
+[here](https://github.com/onyx-dot-app/onyx/blob/main/backend/onyx/configs/onyxbot_configs.py)
